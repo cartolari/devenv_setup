@@ -1,0 +1,5 @@
+- name: Install terminal tools - network
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - curl
+    - exuberant-ctags

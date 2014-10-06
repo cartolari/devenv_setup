@@ -1,0 +1,9 @@
+- name: Install some Ruby gems
+  gem: name={{ item }} state=latest
+  with_items:
+    - bundler
+    - pry
+    - byebug
+    - pry-byebug
+    - homesick
+    - activesupport

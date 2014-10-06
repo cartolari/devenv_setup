@@ -1,0 +1,24 @@
+- name: Install packages for Ag
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - automake
+    - pkg-config
+    - libpcre3-dev
+    - zlib1g-dev
+    - liblzma-dev
+    - git
+    - build-essential
+
+- name: Checkout Ag
+  git: repo=https://github.com/ggreer/the_silver_searcher.git
+       dest=/tmp/ag/
+       update=no
+
+- name: Compile Ag
+  command: bash build.sh chdir=/tmp/ag/
+
+- name: Install Ag
+  command: make install chdir=/tmp/ag/
+
+- name: Clean temporary files
+  file: path=/tmp/ag/ state=absent

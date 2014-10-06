@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  roles:
+    - build_tools
+    - editors
+    - languages
+    - ruby_libs
+    - source_control_systems
+    - terminal_tools

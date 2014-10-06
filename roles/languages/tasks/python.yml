@@ -1,0 +1,5 @@
+- name: Install Python2 and Python3
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - python
+    - python3

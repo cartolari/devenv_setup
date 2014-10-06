@@ -1,0 +1,14 @@
+- name: Add package for inclusion of other PPAs
+  apt: pkg={{ item }} state=present
+  with_items:
+    - python-software-properties
+
+- name: Add Brightbox PPA for ruby installation
+  apt_repository: repo=ppa:brightbox/ruby-ng state=present
+
+- name: Install Ruby
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - libruby2.1
+    - ruby2.1
+    - ruby2.1-dev

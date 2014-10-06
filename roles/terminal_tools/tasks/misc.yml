@@ -1,0 +1,4 @@
+- name: Install terminal tools - misc
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - exuberant-ctags
