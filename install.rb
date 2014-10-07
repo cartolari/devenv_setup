@@ -5,5 +5,5 @@ def ansible_installed?
   $?.exitstatus == 0
 end
 
-system 'sudo ./dependencies/install_ansible.sh' unless ansible_installed?
-system 'ansible-playbook -si hosts development_environment.yml'
+system './dependencies/install_ansible.sh' unless ansible_installed?
+system 'ansible-playbook -i hosts development_environment.yml'
