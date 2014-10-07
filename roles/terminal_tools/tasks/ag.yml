@@ -1,4 +1,10 @@
+- name: Check if Ag is Installed
+  command: "bash -c 'command -v ag'"
+  ignore_errors: true
+  register: ag_installed
+
 - name: Install packages for Ag
+  when: ag_installed|failed
   apt: pkg={{ item }} state=installed
   with_items:
     - automake
@@ -10,15 +16,19 @@
     - build-essential
 
 - name: Checkout Ag
+  when: ag_installed|failed
   git: repo=https://github.com/ggreer/the_silver_searcher.git
        dest=/tmp/ag/
        update=no
 
 - name: Compile Ag
+  when: ag_installed|failed
   command: bash build.sh chdir=/tmp/ag/
 
 - name: Install Ag
+  when: ag_installed|failed
   command: make install chdir=/tmp/ag/
 
 - name: Clean temporary files
+  when: ag_installed|failed
   file: path=/tmp/ag/ state=absent
