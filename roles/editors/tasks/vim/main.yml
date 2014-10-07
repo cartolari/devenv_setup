@@ -1,8 +1,21 @@
+- name: Check installed version of vim
+  command: "vim --version | grep {{ item }}"
+  ignore_errors: true
+  register: vim_installed
+  with_items:
+    - +clipboard
+    - +lua
+    - +perl
+    - +python
+    - +ruby
+
 - name: Remove system vim
   shell: apt-get purge 'vim.*' -qy
+  when: vim_installed|failed
 
 - name: Install vim dependencies
   apt: pkg={{ item }} state=present
+  when: vim_installed|failed
   with_items:
     - libncurses5-dev
     - libgnome2-dev
@@ -24,18 +37,23 @@
     - libperl-dev
 
 - name: Remove vim temp directory
+  when: vim_installed|failed
   file: path="{{ vim_temp_dir }}" state=absent
 
 - name: Make temp directory for vim
+  when: vim_installed|failed
   file: path="{{ vim_temp_dir }}" state=directory
 
 - name: Download vim 7.4
+  when: vim_installed|failed
   get_url: url=ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2 dest="{{ vim_temp_dir }}vim7.4.tar.bz2"
 
 - name: Unarchive vim
+  when: vim_installed|failed
   unarchive: src="{{ vim_temp_dir }}vim7.4.tar.bz2" dest="{{ vim_temp_dir }}"
 
 - name: Configure vim for compilation
+  when: vim_installed|failed
   args:
     chdir: "{{ vim_extraction_dir }}"
   command: >
@@ -56,14 +74,17 @@
                 --with-ruby-command=/usr/bin/ruby1.8
 
 - name: Compile vim
+  when: vim_installed|failed
   args:
     chdir: "{{ vim_extraction_dir }}"
   command: make
 
 - name: Install vim
+  when: vim_installed|failed
   args:
     chdir: "{{ vim_extraction_dir }}"
   command: checkinstall -y
 
 - name: Remove Vim temp dir
+  when: vim_installed|failed
   file: path="{{ vim_temp_dir }}" state=absent
