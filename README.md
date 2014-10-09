@@ -11,7 +11,7 @@ The script will generally need to run as sudo, since it'll install things
 on a machine. To run the script, simple clone the repository and run a
 
 ```bash
-sudo ./install.rb
+sudo ./install.sh
 ```
 
 ## Supported OS
