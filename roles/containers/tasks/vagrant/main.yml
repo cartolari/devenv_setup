@@ -1,0 +1,8 @@
+- name: Check vagrant is installed
+  command: "bash -c 'command -v vagrant'"
+  ignore_errors: true
+  changed_when: vagrant_installed|failed
+  register: vagrant_installed
+
+- include: vagrant.yml
+  when: vagrant_installed|failed

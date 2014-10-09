@@ -2,6 +2,7 @@
 - hosts: localhost
   roles:
     - build_tools
+    - containers
     - editors
     - languages
     - ruby_libs
