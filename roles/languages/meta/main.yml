@@ -1,3 +1,4 @@
 ---
 dependencies:
   - { role: build_tools }
+  - { role: source_control_systems }
