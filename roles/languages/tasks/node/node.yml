@@ -1,0 +1,20 @@
+- name: Checkout nodejs
+  git: repo="https://github.com/joyent/node.git"
+       dest="{{ node_temp_dir }}"
+       version="{{ node_version }}"
+
+- name: Configure node for compilation
+  command: ./configure
+  args:
+    chdir: "{{ node_temp_dir }}"
+
+
+- name: Compile node
+  command: make
+  args:
+    chdir: "{{ node_temp_dir }}"
+
+- name: Install node
+  command: make install
+  args:
+    chdir: "{{ node_temp_dir }}"

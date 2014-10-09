@@ -1,0 +1,8 @@
+- name: Check node installed
+  command: "bash -c 'command -v node'"
+  changed_when: node_installed|failed
+  ignore_errors: true
+  register: node_installed
+
+- include: node.yml
+  when: node_installed|failed
