@@ -1,6 +1,7 @@
 - name: Check if Ag is Installed
   command: "bash -c 'command -v ag'"
   ignore_errors: true
+  changed_when: ag_installed|failed
   register: ag_installed
 
 - name: Install packages for Ag
