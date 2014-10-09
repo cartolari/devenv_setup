@@ -1,0 +1,69 @@
+- name: Remove system vim
+  shell: apt-get purge 'vim.*' -qy
+
+- name: Install vim dependencies
+  apt: pkg={{ item }} state=present
+  with_items:
+    - libncurses5-dev
+    - libgnome2-dev
+    - libgnomeui-dev
+    - libgtk2.0-dev
+    - libatk1.0-dev
+    - libbonoboui2-dev
+    - libcairo2-dev
+    - libx11-dev
+    - libxpm-dev
+    - libxt-dev
+    - python-dev
+    - ruby-dev
+    - checkinstall
+    - liblua5.2-0
+    - liblua5.2-dev
+    - lua5.2
+    - libperl5.14
+    - libperl-dev
+
+- name: Remove vim temp directory
+  file: path="{{ vim_temp_dir }}" state=absent
+
+- name: Make temp directory for vim
+  file: path="{{ vim_temp_dir }}" state=directory
+
+- name: Download vim 7.4
+  get_url: url=ftp://ftp.vim.org/pub/vim/unix/vim-7.4.tar.bz2 dest="{{ vim_temp_dir }}vim7.4.tar.bz2"
+
+- name: Unarchive vim
+  unarchive: src="{{ vim_temp_dir }}vim7.4.tar.bz2" dest="{{ vim_temp_dir }}"
+
+- name: Configure vim for compilation
+  args:
+    chdir: "{{ vim_extraction_dir }}"
+  command: >
+      ./configure
+                --enable-cscope
+                --enable-fail-if-missing
+                --enable-gnome-check
+                --enable-gtk2-check
+                --enable-gui=auto
+                --enable-luainterp
+                --enable-multibyte
+                --enable-perlinterp
+                --enable-pythoninterp
+                --enable-rubyinterp
+                --with-features=huge
+                --with-prefix=/usr
+                --with-python-config-dir=/usr/lib/python2.7/config
+                --with-ruby-command=/usr/bin/ruby1.8
+
+- name: Compile vim
+  args:
+    chdir: "{{ vim_extraction_dir }}"
+  command: make
+
+- name: Install vim
+  args:
+    chdir: "{{ vim_extraction_dir }}"
+  command: checkinstall -y
+
+- name: Remove Vim temp dir
+  file: path="{{ vim_temp_dir }}" state=absent
