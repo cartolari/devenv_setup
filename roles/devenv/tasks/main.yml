@@ -1,4 +1,7 @@
 ---
+- name: Update apt-get cache
+  apt: update_cache=yes
+
 - name: Install packages - build
   apt: pkg={{ item }} state=installed
   with_items: devenv_packages.build
