@@ -1,4 +1,0 @@
-vagrant_version: 1.6.5
-vagrant_architecture: "{{ 'i686' if ansible_architecture == 'i386' else 'x86_64' }}"
-vagrant_url: "https://dl.bintray.com/mitchellh/vagrant/vagrant_{{ vagrant_version }}_{{ vagrant_architecture }}.deb"
-vagrant_temp_file: "/tmp/vagrant.deb"

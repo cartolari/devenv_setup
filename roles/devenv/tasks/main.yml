@@ -1,0 +1,31 @@
+---
+- name: Install packages - build
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.build
+
+- name: Install packages - editors
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.editors
+
+- name: Install packages - general
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.general
+
+- name: Install packages - language
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.languages
+
+- name: Install packages - networking
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.networking
+
+- name: Install packages - terminal
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.terminal
+
+- name: Install packages - version_control
+  apt: pkg={{ item }} state=installed
+  with_items: devenv_packages.version_control
+
+- name: Make zsh default
+  user: name={{ ansible_ssh_user }} shell=/usr/bin/zsh

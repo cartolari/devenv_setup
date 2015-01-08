@@ -1,8 +1,0 @@
-- name: Install common build tools
-  apt: pkg={{ item }} state=installed
-  with_items:
-    - autotools-dev
-    - build-essential
-    - checkinstall
-    - clang
-    - cmake

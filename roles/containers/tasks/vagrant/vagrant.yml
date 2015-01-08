@@ -1,5 +1,0 @@
-- name: Download vagrant deb package
-  get_url: url="{{ vagrant_url }}" dest="{{ vagrant_temp_file }}"
-
-- name: Install vagrant
-  command: "dpkg -i {{ vagrant_temp_file }}"
