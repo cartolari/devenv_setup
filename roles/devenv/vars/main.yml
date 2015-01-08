@@ -28,7 +28,7 @@ devenv_packages:
   general:
     - gnucash
     - exuberant-ctags
-    # - silversearcher-ag
+    - silversearcher-ag
 
   languages:
     - python
