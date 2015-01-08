@@ -26,7 +26,6 @@ devenv_packages:
     - vim-gtk
 
   general:
-    - gnucash
     - exuberant-ctags
     - silversearcher-ag
 
