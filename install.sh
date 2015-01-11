@@ -6,7 +6,7 @@ install_ansible() {
 }
 
 setup_devenv() {
-  ansible-playbook -v -i hosts development_environment.yml
+  ansible-playbook -i hosts development_environment.yml
 }
 
 # Check if ansible is installed
