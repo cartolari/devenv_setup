@@ -5,12 +5,14 @@ install_ansible() {
   pip install ansible
 }
 
-# Check if ansible is installed
-command -v ansible
+setup_devenv() {
+  ansible-playbook -i hosts development_environment.yml
+}
 
-if [ $? -ne 0 ]
-then
+# Check if ansible is installed
+command -v ansible > /dev/null
+
+if [ $? -ne 0 ]; then
   install_ansible
 fi
-
-ansible-playbook -i hosts development_environment.yml
+setup_devenv
