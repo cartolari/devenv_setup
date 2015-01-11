@@ -6,6 +6,7 @@ install_ansible() {
 }
 
 setup_devenv() {
+  ansible-galaxy -f install -r requirements.yml -p roles/
   ansible-playbook -i hosts development_environment.yml
 }
 
