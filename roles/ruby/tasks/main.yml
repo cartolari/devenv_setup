@@ -13,3 +13,6 @@
   script: rbenv-installer.sh
   when: rbenv_installed|failed
   sudo: no
+
+- name: Copy default-gems file
+  copy: src=default-gems dest=~/.rbenv/default-gems
