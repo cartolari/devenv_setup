@@ -1,8 +1,4 @@
 ---
-# Role dependencies variables
-rbenv.ruby_version: 2.2.0
-default_gems_file: files/default-gems
-
 # Own variables
 devenv_packages:
   build:

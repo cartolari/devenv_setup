@@ -1,8 +1,0 @@
----
-- src: https://github.com/ANXS/nodejs
-  name: ANXS.nodejs
-  path: roles/
-
-- src: https://github.com/zzet/ansible-rbenv-role
-  name: zzet.rbenv
-  path: roles/
