@@ -1,0 +1,51 @@
+---
+# Own variables
+devenv_packages:
+  build:
+    - autoconf
+    - autotools-dev
+    - bison
+    - build-essential
+    - checkinstall
+    - clang
+    - cmake
+    - libffi-dev
+    - libgdbm-dev
+    - libgdbm3
+    - libncurses5-dev
+    - libreadline6-dev
+    - libssl-dev
+    - libyaml-dev
+    - zlib1g-dev
+
+  editors:
+    - vim-gtk
+
+  general:
+    - exuberant-ctags
+    - silversearcher-ag
+
+  languages:
+    - nodejs
+    - npm
+    - python
+    - python-dev
+    - python3
+    - rbenv
+
+  networking:
+    - curl
+    - wireshark
+    - wget
+
+  terminal:
+    - tmux
+    - tree
+    - zsh
+
+  version_control:
+    - mercurial
+    - git
+
+ruby:
+  version: 2.2.0

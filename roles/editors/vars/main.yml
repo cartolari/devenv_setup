@@ -1,2 +1,0 @@
-vim_temp_dir: /tmp/vim-src/
-vim_extraction_dir: "{{ vim_temp_dir }}vim74"

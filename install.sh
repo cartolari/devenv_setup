@@ -1,11 +1,18 @@
 #!/bin/sh
 
+install_ansible() {
+  apt-get install -qy python-dev python-pip
+  pip install ansible
+}
+
+setup_devenv() {
+  ansible-playbook -i hosts development_environment.yml
+}
+
 # Check if ansible is installed
-command -v ansible
+command -v ansible > /dev/null
 
-if [ $? -ne 0 ]
-then
-  ./dependencies/install_ansible.sh;
+if [ $? -ne 0 ]; then
+  install_ansible
 fi
-
-ansible-playbook -i hosts development_environment.yml
+setup_devenv

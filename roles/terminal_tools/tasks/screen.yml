@@ -1,9 +1,0 @@
-- name: Install terminal tools - screen
-  apt: pkg={{ item }} state=installed
-  with_items:
-    - zsh
-    - byobu
-    - python-pygments
-
-- name: Make zsh default
-  user: name={{ ansible_ssh_user }} shell=/usr/bin/zsh

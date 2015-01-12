@@ -1,10 +1,4 @@
 ---
 - hosts: localhost
   roles:
-    - build_tools
-    - containers
-    - editors
-    - languages
-    - ruby_libs
-    - source_control_systems
-    - terminal_tools
+    - devenv

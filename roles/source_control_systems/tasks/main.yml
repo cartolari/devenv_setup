@@ -1,5 +1,0 @@
-- name: Install source control systems
-  apt: pkg={{ item }} state=installed
-  with_items:
-      - git
-      - mercurial
