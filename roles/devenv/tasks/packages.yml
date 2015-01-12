@@ -29,6 +29,3 @@
 - name: Install packages - version_control
   apt: pkg={{ item }} state=installed
   with_items: devenv_packages.version_control
-
-- name: Make zsh default
-  user: name={{ ansible_ssh_user }} shell=/usr/bin/zsh
