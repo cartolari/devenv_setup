@@ -9,12 +9,15 @@
     - { repo: 'rkh/rbenv-update', dest: 'rbenv-update' }
     - { repo: 'garnieretienne/rvm-download', dest: 'rvm-download' }
 
-- name: Check if ruby {{ ruby.version }} is installed
-  command: rbenv versions | grep {{ ruby.version }}
+- name: Check if ruby "{{ ruby.version }}" is installed
+  shell: "rbenv versions | grep {{ ruby.version }}"
   register: ruby_installed
   changed_when: ruby_installed|failed
+  ignore_errors: true
+  sudo: no
 
 
 - name: Install ruby {{ ruby.version }}
   command: rbenv install {{ ruby.version }}
   when: ruby_installed|failed
+  sudo: no
