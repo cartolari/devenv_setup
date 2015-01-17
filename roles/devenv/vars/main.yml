@@ -24,6 +24,7 @@ devenv_packages:
   general:
     - exuberant-ctags
     - silversearcher-ag
+    - xclip
 
   languages:
     - nodejs
