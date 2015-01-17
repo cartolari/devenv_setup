@@ -9,10 +9,11 @@ setup_devenv() {
   ansible-playbook -i hosts development_environment.yml
 }
 
-# Check if ansible is installed
-command -v ansible > /dev/null
+ansible_installed() {
+  command -v ansible > /dev/null
+}
 
-if [ $? -ne 0 ]; then
+if ! ansible_installed; then
   install_ansible
 fi
 setup_devenv
