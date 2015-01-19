@@ -1,3 +1,4 @@
 /.vagrant
 *.swp
-roles/chruby/
+!roles/devenv/
+roles/*

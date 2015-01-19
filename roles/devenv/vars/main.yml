@@ -1,4 +1,10 @@
 ---
+# Dependency variables
+ruby_install_ruby_versions:
+  - 2.1.3
+ruby_default_version: 2.1.3
+ruby_users: []
+
 # Own variables
 devenv_packages:
   build:
@@ -47,6 +53,3 @@ devenv_packages:
   version_control:
     - mercurial
     - git
-
-ruby:
-  version: 2.2.0
