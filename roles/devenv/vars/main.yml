@@ -46,6 +46,7 @@ devenv_packages:
     - wget
 
   terminal:
+    - autojump
     - tmux
     - tree
     - zsh
