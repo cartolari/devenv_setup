@@ -1,0 +1,4 @@
+---
+dependencies:
+  - { role: kagux.silversearcher_ag }
+  - { role: innohub-ansible.ruby }

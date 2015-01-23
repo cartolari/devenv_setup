@@ -18,7 +18,7 @@ ansible_installed() {
 }
 
 install_dependencies() {
-  ansible-galaxy install -f -r requirements.txt -p roles
+  ansible-galaxy install -f -r requirements.txt
 }
 
 if ! ansible_installed; then

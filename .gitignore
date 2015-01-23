@@ -1,4 +1,2 @@
 /.vagrant
 *.swp
-!roles/devenv/
-roles/*
