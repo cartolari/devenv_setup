@@ -2,14 +2,11 @@ require 'rake'
 require 'rspec/core/rake_task'
 require_relative 'lib/devenv_setup/io'
 
-task :spec    => 'spec:all'
 namespace :spec do
   targets = Dir.glob('./spec/*').map do |dir|
     next unless File.directory?(dir)
     File.basename(dir)
   end.reject(&:nil?)
-
-  task :all => targets
 
   targets.each do |target|
     desc "Run serverspec tests to #{target}"
@@ -27,4 +24,4 @@ task :provision do
 end
 
 desc 'Provision the machine and run the tests'
-task :default => [:provision, :spec]
+task :default => [:provision, 'spec:spec']
