@@ -4,14 +4,33 @@ It'll install a bunch of tools like vim, ruby, python, wget, curl, etc.
 This will be done using ansible. If the system have ansible installed
 it'll be used, otherwise a new version will be downloaded.
 
-## Running the script
-The only thing you need is a version of ruby installed, and you should
-run the install.rb script
+## Installing
 The script will generally need to run as sudo, since it'll install things
 on a machine. To run the script, simple clone the repository and run a
 
 ```bash
 sudo ./install.sh
+```
+
+## What this script provides
+To see the list of what packages will be installed check the
+[vars file](roles/devenv/vars/main.yml)
+
+Beyond the packages in the [vars file](roles/devenv/vars/main.yml)
+some components will be installed by 3rd party roles:
+  - Ruby 2.1.3 (managed by chruby\*)
+  - Java 1.8u25 (configured with alternatives, so no need to change path)
+  - Ag the silver searcher (a really fast substitute for grep in development
+  environments)
+
+\* chruby requires you to source a file before start to work if you use bash
+this is done automatically by adding a file in /etc/profiles.d/. But if you do
+not use bash you need to do that in your shell rc script (if it's zsh you can
+do in your ~/.zshrc). For chruby to work just add the following lines in your
+rc file:
+```bash
+source /usr/local/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 ```
 
 ## Supported OS
