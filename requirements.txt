@@ -2,3 +2,4 @@ innohub-ansible.ruby
 kagux.silversearcher_ag
 groover.java
 azavea.vagrant
+azavea.docker

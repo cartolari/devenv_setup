@@ -4,3 +4,4 @@ dependencies:
   - { role: innohub-ansible.ruby }
   - { role: groover.java }
   - { role: azavea.vagrant }
+  - { role: azavea.docker }

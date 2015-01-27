@@ -10,6 +10,8 @@ java_oracle_version: '8u25'
 vagrant_version: 1.7.2
 vagrant_arch: 'x86_64'
 
+docker_version: "1.4.1"
+
 # Own variables
 devenv_packages:
   build:
