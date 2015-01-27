@@ -17,8 +17,4 @@ describe 'devenv' do
     end
   end
 
-  describe file('/usr/local/bin/ag') do
-    it { is_expected.to be_executable  }
-  end
-
 end
