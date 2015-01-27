@@ -22,6 +22,7 @@ some components will be installed by 3rd party roles:
   - Java 1.8u25 (configured with alternatives, so no need to change path)
   - Ag the silver searcher (a really fast substitute for grep in development
   environments)
+  - Vagrant (development environments in a virtual machine)
 
 \* chruby requires you to source a file before start to work if you use bash
 this is done automatically by adding a file in /etc/profiles.d/. But if you do

@@ -3,3 +3,4 @@ dependencies:
   - { role: kagux.silversearcher_ag }
   - { role: innohub-ansible.ruby }
   - { role: groover.java }
+  - { role: azavea.vagrant }
