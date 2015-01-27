@@ -6,6 +6,6 @@ describe 'devenv' do
   end
 
   describe command('java -version') do
-    its(:stderr) { should match('1.8.0_25') }
+    its(:stderr) { should include('1.8.0_25') }
   end
 end
