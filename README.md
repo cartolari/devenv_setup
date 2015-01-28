@@ -37,3 +37,23 @@ source /usr/local/share/chruby/auto.sh
 
 ## Supported OS
 Today the only supported OSs (at least for now) are Debian derivatives
+
+## Running the tests
+This script contains tests for guaranteeing that it works properly (at least in
+a recent version of Ubuntu).
+
+The tests are written in Ruby using RSpec and ServerSpec.
+
+If you want to run the tests you'll need Ansible, Vagrant and therefore
+Virtualbox, and ruby(for all of these dependencies you can first run the
+script in the target machine)
+
+With all dependencies installed run a
+```ruby
+bundle install
+```
+to install the test libraries and after that run
+```ruby
+bundle exec rake
+```
+this will create a virtual box machine provision it and run the tests against it.
