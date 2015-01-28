@@ -5,3 +5,4 @@ dependencies:
   - { role: groover.java }
   - { role: azavea.vagrant }
   - { role: azavea.docker }
+  - { role: bobbyrenwick.pip }

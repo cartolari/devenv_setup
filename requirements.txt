@@ -3,3 +3,4 @@ kagux.silversearcher_ag
 groover.java
 azavea.vagrant
 azavea.docker
+bobbyrenwick.pip
