@@ -45,12 +45,21 @@ devenv_packages:
     - python
     - python-dev
     - python3
-    - rbenv
+
+  python_pip:
+    - docker-compose
+    - Pygments
 
   networking:
     - curl
     - wireshark
     - wget
+
+  ruby_gems:
+    - activesupport
+    - bundler
+    - homesick
+    - pry
 
   terminal:
     - autojump

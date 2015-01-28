@@ -1,0 +1,4 @@
+---
+- name: Install ruby Gems
+  shell: "chruby-exec {{ruby_default_version}} -- gem install {{item}}"
+  with_items: devenv_packages.ruby_gems
