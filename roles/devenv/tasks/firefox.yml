@@ -3,4 +3,4 @@
   apt_repository: repo='ppa:ubuntu-mozilla-daily/firefox-aurora' state=present update_cache=yes
 
 - name: Install Firefox Developer Edition
-  apt: name=firefox state=installed
+  apt: name=firefox state=latest
