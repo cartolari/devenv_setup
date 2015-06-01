@@ -5,7 +5,7 @@ ruby_default_version: 2.1.5
 ruby_users: []
 
 java_oracle_distribution: 'jdk'
-java_oracle_version: '8u25'
+java_oracle_version: '8u45'
 
 vagrant_version: 1.7.2
 vagrant_arch: 'x86_64'
