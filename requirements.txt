@@ -4,3 +4,4 @@ groover.java
 azavea.vagrant
 azavea.docker
 bobbyrenwick.pip
+groover.util
