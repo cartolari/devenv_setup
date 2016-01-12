@@ -1,16 +1,16 @@
 ---
 # Dependency variables
-ruby_install_ruby_versions: [2.1.5]
-ruby_default_version: 2.1.5
+ruby_install_ruby_versions: [2.3.0]
+ruby_default_version: 2.3.0
 ruby_users: []
 
 java_oracle_distribution: 'jdk'
-java_oracle_version: '8u45'
+java_oracle_version: '8u80'
 
-vagrant_version: 1.7.2
+vagrant_version: 1.8.0
 vagrant_arch: 'x86_64'
 
-docker_version: '1.6.2'
+docker_version: '1.9.*'
 
 # Own variables
 devenv_packages:
