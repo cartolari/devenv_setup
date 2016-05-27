@@ -58,3 +58,6 @@ dependencies:
   - role: powerline_fonts
     tags:
       - powerline_fonts
+
+  - role: jdauphant.sublimetext
+    become: yes
