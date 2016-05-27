@@ -1,0 +1,14 @@
+---
+- name: download
+  get_url: url={{ devenv_powerline_url }} dest={{ devenv_powerline_temp_file }}
+
+- name: ensure temp dir exists
+  file: path={{ devenv_powerline_temp_dir }} state=directory
+
+- name: extract
+  unarchive: src={{ devenv_powerline_temp_file }} dest={{ devenv_powerline_temp_dir }}
+
+- name: install
+  command: "{{ devenv_powerline_install }}"
+  args:
+    chdir: "{{ devenv_powerline_temp_dir }}"

@@ -4,3 +4,4 @@
 /roles/*
 !/roles/devenv
 !/roles/generic_package
+!roles/powerline_fonts

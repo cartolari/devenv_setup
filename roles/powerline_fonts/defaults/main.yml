@@ -1,0 +1,5 @@
+---
+devenv_powerline_temp_dir: /tmp/devenv_powerline
+devenv_powerline_temp_file: /tmp/devenv_powerline.tar.gz
+devenv_powerline_install: "{{ devenv_powerline_temp_dir }}/fonts-master/install.sh"
+devenv_powerline_url: https://github.com/powerline/fonts/archive/master.tar.gz
