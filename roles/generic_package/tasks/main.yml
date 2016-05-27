@@ -1,4 +1,3 @@
 ---
 - name: install {{generic_package_name}}
   package: name={{generic_package_name}} state={{generic_package_state}}
-  become: yes

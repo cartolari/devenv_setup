@@ -2,10 +2,8 @@
 allow_duplicates: true
 dependencies:
   - role: azavea.docker
-    become: yes
 
   - role: Oefenweb.docker-compose
-    become: yes
 
   - role: generic_package
     generic_package_name: "{{ devenv_pkg_curl }}"
@@ -53,11 +51,9 @@ dependencies:
     generic_package_name: "{{ devenv_pkg_zsh }}"
 
   - role: pedrocarmona.github-git-lfs
-    become: yes
 
   - role: powerline_fonts
     tags:
       - powerline_fonts
 
   - role: jdauphant.sublimetext
-    become: yes
