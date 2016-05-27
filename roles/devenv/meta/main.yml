@@ -52,6 +52,9 @@ dependencies:
   - role: generic_package
     generic_package_name: "{{ devenv_pkg_zsh }}"
 
+  - role: pedrocarmona.github-git-lfs
+    become: yes
+
   - role: powerline_fonts
     tags:
       - powerline_fonts

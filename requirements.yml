@@ -1,2 +1,3 @@
 - src: azavea.docker
 - src: Oefenweb.docker-compose
+- src: pedrocarmona.github-git-lfs
