@@ -1,6 +1,0 @@
----
-- name: Install ruby Gems
-  shell: >
-    executable=/bin/bash source /etc/profile;
-    chruby {{ruby_default_version}} && gem install {{item}}
-  with_items: devenv_packages.ruby_gems

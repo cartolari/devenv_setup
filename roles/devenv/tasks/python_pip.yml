@@ -1,4 +1,0 @@
----
-- name: Install python packages
-  pip: name={{item}} state=latest
-  with_items: devenv_packages.python_pip

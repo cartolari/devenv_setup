@@ -1,6 +1,0 @@
----
-- include: packages.yml
-- include: alternatives.yml
-- include: ruby_gems.yml
-- include: python_pip.yml
-- include: firefox.yml
