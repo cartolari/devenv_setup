@@ -17,4 +17,5 @@ devenv_pkg_unzip: unzip
 devenv_pkg_wget: wget
 devenv_pkg_wireshark: wireshark
 devenv_pkg_zip: zip
+devenv_pkg_vim: vim
 devenv_pkg_zsh: zsh
