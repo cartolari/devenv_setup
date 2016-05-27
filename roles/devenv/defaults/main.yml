@@ -1,0 +1,20 @@
+---
+# Dependency variables
+docker_version: '1.11.1'
+docker_compose_version: '1.7.1'
+
+# Own variables
+devenv_pkg_curl: curl
+devenv_pkg_git: git
+devenv_pkg_htop: htop
+devenv_pkg_jq: jq
+devenv_pkg_mercurial: mercurial
+devenv_pkg_moreutils: moreutils
+devenv_pkg_pv: pv
+devenv_pkg_tig: tig
+devenv_pkg_tree: tree
+devenv_pkg_unzip: unzip
+devenv_pkg_wget: wget
+devenv_pkg_wireshark: wireshark
+devenv_pkg_zip: zip
+devenv_pkg_zsh: zsh

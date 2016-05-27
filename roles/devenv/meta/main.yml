@@ -1,2 +1,54 @@
 ---
+allow_duplicates: true
 dependencies:
+  - role: azavea.docker
+    become: yes
+
+  - role: Oefenweb.docker-compose
+    become: yes
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_curl }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_git }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_htop }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_jq }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_mercurial }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_moreutils }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_pv }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_tig }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_tree }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_unzip }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_wget }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_wireshark }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_zip }}"
+
+  - role: generic_package
+    generic_package_name: "{{ devenv_pkg_zsh }}"
+
+  - role: powerline_fonts
+    tags:
+      - powerline_fonts
