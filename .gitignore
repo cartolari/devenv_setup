@@ -1,5 +1,6 @@
 /.vagrant
 *.swp
-!/roles/devenv
-/roles
 *.retry
+/roles/*
+!/roles/devenv
+!/roles/generic_package
