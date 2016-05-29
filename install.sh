@@ -10,7 +10,7 @@ install_ansible() {
 }
 
 setup_devenv() {
-  ansible-playbook -i hosts development_environment.yml
+  ansible-playbook -b devenv.yml
 }
 
 ansible_installed() {
@@ -18,7 +18,7 @@ ansible_installed() {
 }
 
 install_dependencies() {
-  ansible-galaxy install -f -r requirements.txt
+  ansible-galaxy install -r requirements.yml
 }
 
 if ! ansible_installed; then

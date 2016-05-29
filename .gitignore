@@ -3,5 +3,6 @@
 *.retry
 /roles/*
 !/roles/devenv
+!/roles/docker
 !/roles/generic_package
 !roles/powerline_fonts

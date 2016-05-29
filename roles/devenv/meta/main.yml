@@ -1,9 +1,10 @@
 ---
 allow_duplicates: true
 dependencies:
-  - role: azavea.docker
+  - role: docker
 
   - role: Oefenweb.docker-compose
+    docker_compose_version: "{{ Oefenweb_docker-compose.docker_compose_version }}"
 
   - role: generic_package
     generic_package_name: "{{ devenv_pkg_curl }}"
@@ -57,3 +58,4 @@ dependencies:
       - powerline_fonts
 
   - role: jdauphant.sublimetext
+    sublimetext_build: "{{ jdauphant_sublimetext.sublimetext_build }}"

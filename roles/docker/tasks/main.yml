@@ -1,0 +1,18 @@
+---
+- name: download setup script
+  get_url:
+    url: https://get.docker.com
+    dest: "{{ devenv_docker_setup_path }}"
+    mode: 755
+    validate_certs: false # TODO: upgrade python before any role runs
+
+- name: install
+  command: "{{ devenv_docker_setup_path }}"
+  become: yes
+
+- name: add current user to the docker group
+  become: yes
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    groups: docker
+    append: yes

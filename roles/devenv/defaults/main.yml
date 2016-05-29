@@ -1,8 +1,9 @@
 ---
 # Dependency variables
-docker_version: '1.11.1'
-docker_compose_version: '1.7.1'
-sublimetext_build:  3114
+Oefenweb_docker-compose:
+  docker_compose_version: '1.7.1'
+jdauphant_sublimetext:
+  sublimetext_build:  3114
 
 # Own variables
 devenv_pkg_curl: curl
